@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function NavBar({ session }) {
   return (
     <nav className="navbar bg-base-100">
@@ -16,12 +18,20 @@ export default function NavBar({ session }) {
           <div className="dropdown dropdown-end z-50">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={session.user.image} />
+                <Image
+                  width={512}
+                  height={512}
+                  alt="User Icon"
+                  src={
+                    session.user.image ? session.user.image : "/userIcon.png"
+                  }
+                  className={session.user.image ? "" : "dark:invert"}
+                />
               </div>
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow dark:bg-slate-800 bg-slate-200 rounded-box w-52 "
             >
               <li>
                 <a href="/settings">Settings</a>
