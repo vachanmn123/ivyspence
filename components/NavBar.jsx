@@ -33,11 +33,19 @@ export default function NavBar({ session }) {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow dark:bg-slate-800 bg-slate-200 rounded-box w-52 "
             >
-              <li>
+              {/* <li>
                 <a href="/settings">Settings</a>
-              </li>
+              </li> */}
               <li>
-                <a href="/api/auth/signout">Logout</a>
+                <a href="/api/auth/signout">
+                  <Image
+                    src={"/logout.png"}
+                    width={16}
+                    height={16}
+                    className="dark:invert py-3"
+                  />
+                  Logout
+                </a>
               </li>
             </ul>
           </div>

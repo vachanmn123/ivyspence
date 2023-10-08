@@ -23,6 +23,12 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         <NavBar session={session} />
         <div className="content">{children}</div>
+        <small className="flex text-center align-middle justify-center btm-nav">
+          <span>
+            &copy; {new Date().getFullYear()} IvySpence by{" "}
+            <a href="https://vachanmn.is-a.dev">Vachan MN</a>
+          </span>
+        </small>
       </body>
     </html>
   );

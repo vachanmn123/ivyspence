@@ -11,7 +11,7 @@ export default async function transactions() {
    */
   const session = await getServerSession(authOptions);
   if (!session) {
-    redirect("/api/auth/signin");
+    redirect("/api/auth/signin?next=/transactions");
   }
 
   const user = await prisma.user.findUnique({
@@ -42,6 +42,7 @@ export default async function transactions() {
               <th>Description</th>
               <th>Amount</th>
               <th>Transaction Date</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +75,14 @@ export default async function transactions() {
                   {Math.abs(transaction.amount)} {user.defaultCurrencyCode}
                 </td>
                 <td>{transaction.createdAt.toDateString()}</td>
+                <td className="flex gap-2">
+                  <a href={`/transactions/${transaction.id}`}>
+                    <button className="btn btn-primary">Edit</button>
+                  </a>
+                  <a href={`/transactions/${transaction.id}/delete`}>
+                    <button className="btn btn-error text-white">Delete</button>
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -81,7 +90,7 @@ export default async function transactions() {
         {/* Cards are shown on mobile */}
         {user?.transactions.map((transaction) => (
           <div className="md:hidden w-full" key={transaction.id}>
-            <div className="flex flex-row py-5 px-5 align-middle justify-between w-full">
+            <div className="flex flex-row py-5 px-5 align-middle justify-between w-full gap-5">
               <div className="flex flex-col text-5xl justify-self-start">
                 <Image
                   height={55}
@@ -106,6 +115,14 @@ export default async function transactions() {
                 <span className="text-sm">
                   {transaction.createdAt.toDateString()}
                 </span>
+              </div>
+              <div className="flex gap-2">
+                <a href={`/transactions/${transaction.id}`}>
+                  <button className="btn btn-primary">Edit</button>
+                </a>
+                <a href={`/transactions/${transaction.id}/delete`}>
+                  <button className="btn btn-error text-white">Delete</button>
+                </a>
               </div>
             </div>
           </div>

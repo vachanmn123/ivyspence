@@ -34,6 +34,7 @@ export async function POST(req) {
       description: data.description,
       amount: data.amount,
       userId: user.id,
+      createdAt: new Date(data.date),
     },
   });
   return NextResponse.json({ message: "Transaction added" }, { status: 201 });

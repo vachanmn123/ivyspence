@@ -27,7 +27,7 @@ function TransactionForm() {
     const formattedData = {
       name: data.name,
       amount: credit ? parseFloat(data.amount) : 0 - parseFloat(data.amount),
-      date: new Date(data.date).toISOString(),
+      date: new Date(data.date),
       description: data.description,
     };
     fetch("/api/addTransaction", {
