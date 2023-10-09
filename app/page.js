@@ -15,6 +15,7 @@ export default async function Home() {
             width={500}
             height={300}
             className="max-w-sm rounded-lg shadow-2xl lg:w-1/2"
+            alt="IvySpence Screenshot"
           />
           <div className="lg:w-1/2">
             <h1 className="text-5xl font-bold">IvySpence</h1>
@@ -23,10 +24,10 @@ export default async function Home() {
               to help you keep track of your finances. With its intuitive
               interface and powerful features, IvySpence makes it easy to manage
               your expenses, track your spending, and stay on top of your
-              finances. Whether you're a busy professional, a student, or just
-              someone who wants to stay on top of their finances, IvySpence is
-              the perfect tool for you. So why wait? Get started today and take
-              control of your finances with IvySpence!
+              finances. Whether you&apos;re a busy professional, a student, or
+              just someone who wants to stay on top of their finances, IvySpence
+              is the perfect tool for you. So why wait? Get started today and
+              take control of your finances with IvySpence!
             </p>
             <a href="/transactions">
               <button className="btn btn-primary">Get Started</button>

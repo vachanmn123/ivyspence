@@ -43,6 +43,7 @@ export default function NavBar({ session }) {
                     width={16}
                     height={16}
                     className="dark:invert py-3"
+                    alt="Logout Icon"
                   />
                   Logout
                 </a>
