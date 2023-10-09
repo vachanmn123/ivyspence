@@ -4,7 +4,7 @@
  *
  * @param {{ params: { id: string } }} param0
  */
-export default async function DeleteTransaction({ params }) {
+export default function DeleteTransaction({ params }) {
   const handleDelete = async (e) => {
     e.preventDefault();
     const res = await fetch(`/api/deleteTransaction/${params.id}`, {
