@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import authOptions from "@/lib/auth/options";
 import NavBar from "@/components/NavBar";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Analytics />
         <NavBar session={session} />
         <div className="content">{children}</div>
         <small className="flex text-center align-middle justify-center btm-nav">
