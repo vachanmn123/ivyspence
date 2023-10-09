@@ -1,5 +1,6 @@
 {
   "name": "ivyspence",
+  "description": "A beautiful Expense manager.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
