@@ -25,7 +25,7 @@ export default async function RootLayout({ children }) {
         <Analytics />
         <NavBar session={session} />
         <div className="content">{children}</div>
-        <small className="flex text-center align-middle justify-center btm-nav">
+        <small className="flex text-center align-middle justify-center py-3">
           <span>
             &copy; {new Date().getFullYear()} IvySpence by{" "}
             <a href="https://vachanmn.is-a.dev">Vachan MN</a>
